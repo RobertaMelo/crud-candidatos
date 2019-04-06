@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+/*# sourceMappingURL=styles.scss.map */
+.section {
+  display: block;
+  max-width: 500px;
+  max-height: 500px;
+  text-align: center;
+  margin-top: 2%;
+  left: 4%;
+  border: 0;
+  -webkit-box-shadow: 0px 0px 5px 0px #525252;
+  -moz-box-shadow: 0px 0px 5px 0px #525252;
+  box-shadow: 0px 0px 5px 0px #525252;
+}
+
+.login {
+  text-align: center;
+  background-image: #FFFF;
+}
+
+.logo-login {
+  border: 0;
+  max-width: 170px;
+  max-height: 130px;
+  padding-top: 0px;
+}
+
+.logo-header {
+  height: 80;
+  width: 130px;
+  transform: translate(0, -30%);
+}
+
+.btn {
+  margin-top: 5%;
+  margin-left: 5px;
+  width: 170px;
+  height: 40px;
+}
+
+.header-navbar {
+  background-color: #6b6b6b;
+  height: 60px;
+}
+
+.header-line {
+  background-color: #A8CF45;
+  margin-top: 3px;
+}
+
+.login-title {
+  margin-top: 25%;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #6b6b6b;
+  display: block;
+}
+
+.footer-page {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 25px;
+  align-content: bottom;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

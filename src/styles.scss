@@ -1,1 +1,81 @@
 /*# sourceMappingURL=styles.scss.map */
+@charset "UTF-8";
+
+$blue: #00B0F0;
+$green: #A8CF45;
+$white: #FFFF;
+$gray: rgb(107, 107, 107);
+$background: linear-gradient(to right top, #fafff8, #f6fef8, #f1fdf8, #edfcf9, #e9fbfb);
+
+
+@mixin position($value) {
+    display: block;
+    max-width: 500px; 
+    max-height: 500px;
+    text-align: center; 
+    margin-top: 2%;
+    left: 4%;;
+    border: 0;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(82,82,82,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(82,82,82,1);
+    box-shadow: 0px 0px 5px 0px rgba(82,82,82,1);
+}
+
+.section {
+    @include position(20px);
+}
+
+.login {
+    text-align: center;
+    background-image: $white;
+}
+
+.logo-login {
+    border: 0;
+    max-width: 170px; 
+    max-height: 130px;
+    padding-top: 0px;
+}
+
+.logo-header {
+    height: 80;
+    width: 130px;
+    transform: translate(0, -30%)
+}
+
+.btn {
+    margin-top: 5%;
+    margin-left: 5px;
+    width: 170px;
+    height: 40px;
+}
+
+.header-navbar {
+    background-color: $gray;
+    height: 60px;
+}
+
+.header-line {
+    background-color: $green;
+    margin-top: 3px;
+}
+
+.login-title {
+    margin-top: 25%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: $gray;
+    display: block;
+}
+
+.footer-page {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    align-content: bottom;
+    position:absolute;
+    bottom: 0;
+    width: 100%; 
+}
