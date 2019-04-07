@@ -1,3 +1,48 @@
-<p>
-  register-model works!
-</p>
+<app-header></app-header>
+<div class="card card-register">
+  <br>
+  <h1 class="title-register" id="title">{{title}}</h1>
+  <hr class="form-line">
+  <div class="col-12">
+      <label for="full_name">Nome Completo</label>
+      <input type="text" class="form-control" id="full_name" formControlName="full_name" required>
+      <p class="alerts" *ngIf="isFieldInvalid('nome')">Informe seu nome completo.</p>
+  </div>
+  <div class="col-12">
+      <label for="cpf">CPF</label>
+      <input type="text" class="form-control" id="cpf" mask="000.000.000-00" formControlName="cpf">
+  </div>
+  <div class="col-12">
+    <label for="rg">RG</label>
+    <input type="text" class="form-control" id="rg" formControlName="rg" required>
+  </div>
+  <div class="col-12">
+    <label for="dataNascimento">Data de Nascimento</label>
+    <input type="date" class="form-control" id="dataNascimento" formControlName="dataNascimento" required>
+  </div>
+  <div class="col-12">
+    <label for="telefone">Telefone</label>
+    <input type="text" class="form-control" id="telefone" formControlName="telefone"mask="(00)-00000-0000"  required>
+  </div> 
+  
+  <div class="col-12">
+      <label for="username">Username</label>
+      <input type="number" class="form-control" id="username" formControlName="username" required>
+      <p class="alerts" *ngIf="isFieldInvalid('username')">Informe seu usuário.</p>
+  </div> 
+  <div class="col-12">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" formControlName="email">
+  </div>
+  <div class="col-12">
+    <label for="password">Senha</label>
+    <input type="text" class="form-control" id="password"  formControlName="password">
+  </div>
+  <br>
+  <div class="col-12">
+    <button type="submit" id="submit" class="btn btn-primary button-primary-register">Enviar</button> 
+    <button type="button" class="btn btn-secondary button-secondary-register">Cancelar</button>
+  </div> 
+  <br>
+</div>
+

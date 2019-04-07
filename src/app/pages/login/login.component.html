@@ -1,8 +1,8 @@
+<app-header></app-header>
 <body class="login">
-  <app-header></app-header>
   <br>
   <div class="card section col-md-3 offset-md-4">
-    <h1 class="login-title">Prova Delinea</h1>
+    <h1 class="title-login">Prova Delinea</h1>
     <img src="../../../assets/img/logo.png" alt="Delínea" class="img-thumbnail logo-login">
     <div class="card-body">
         <div class="input-group mb-3">
@@ -17,9 +17,9 @@
         </div>
         <input type="text" class="form-control" placeholder="Senha" aria-label="Password" aria-describedby="basic-addon1">
       </div>
-      <button type="submit" class="btn btn-primary">Entrar</button>
-      <button type="button" class="btn btn-secondary">Cadastrar-se</button>
+      <button type="submit" class="btn btn-primary button-primary-login">Entrar</button>
+      <a href="register"><button type="button" class="btn btn-secondary button-secondary-login">Cadastrar-se</button></a>
     </div>
   </div>
-  <app-footer></app-footer>
+  <app-footer [footerStyleLogin]="footerStyleLogin"></app-footer>
 </body>

@@ -4,7 +4,7 @@
 $blue: #00B0F0;
 $green: #A8CF45;
 $white: #FFFF;
-$gray: rgb(107, 107, 107);
+$gray: rgb(153, 152, 152);
 $background: linear-gradient(to right top, #fafff8, #f6fef8, #f1fdf8, #edfcf9, #e9fbfb);
 
 
@@ -14,7 +14,7 @@ $background: linear-gradient(to right top, #fafff8, #f6fef8, #f1fdf8, #edfcf9, #
     max-height: 500px;
     text-align: center; 
     margin-top: 2%;
-    left: 4%;;
+    left: 3%;;
     border: 0;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(82,82,82,1);
     -moz-box-shadow: 0px 0px 5px 0px rgba(82,82,82,1);
@@ -23,6 +23,107 @@ $background: linear-gradient(to right top, #fafff8, #f6fef8, #f1fdf8, #edfcf9, #
 
 .section {
     @include position(20px);
+}
+
+@mixin title-values($paddingTop, $paddingBottom, $marginTop) {
+    padding-top:$paddingTop;
+    padding-bottom: $paddingBottom;
+    margin-top: $marginTop;
+    text-align: center;
+    color: $gray;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title-login {
+    @include title-values(20px, 5px, 27%);
+}
+
+.title-register {
+    @include title-values(0, 5px, 0)
+}
+
+.title-list {
+    @include title-values(0, 5px, 0)
+}
+@mixin buttons($marginTop, $marginLeft, $color, $float) {
+    width: 170px;
+    height: 40px;
+    margin-top: $marginTop;
+    margin-left:  $marginLeft;
+    background-color: $color;
+    border: 0;
+    float: $float;
+}
+
+.button-primary-login {
+    @include buttons(5%, 5px, $green, 0);
+}
+.button-secondary-login {
+    @include buttons(5%, 5px, $blue, 0);
+}
+
+.button-primary-register {
+    @include buttons(5px, 5px, $green, right);
+}
+
+.button-secondary-register {
+    @include buttons(5px, 5px, $gray, right);
+}
+
+@mixin card($transform, $width) {
+    margin-top: 2%;
+    transform: $transform;
+    width: $width;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(158,158,158,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(158,158,158,1);
+    box-shadow: 0px 0px 5px 0px rgba(158,158,158,1);
+
+}
+.card-register {
+    @include card(translate(70%), 40%)
+}
+
+.card-list {
+    @include card(translate(38%), 60%)
+}
+
+@mixin line-header($height) {
+    background-color: $green;
+    margin-top: 3px;
+    height: $height;
+    padding-top: 0;
+    border: 0;
+}
+
+.header-line {
+   @include line-header(4px)
+
+}
+
+.form-line {
+    @include line-header(1px)
+}
+
+@mixin footer($colorBackground, $colorText) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    align-content: bottom;
+    position:absolute;
+    bottom: 0;
+    width: 100%; 
+    color: $colorText;
+    background-color: $colorBackground;
+}
+
+.footer-login {
+   @include footer($white, $gray)
+}
+
+.footer-form {
+    @include footer($gray, $white)
 }
 
 .login {
@@ -43,39 +144,33 @@ $background: linear-gradient(to right top, #fafff8, #f6fef8, #f1fdf8, #edfcf9, #
     transform: translate(0, -30%)
 }
 
-.btn {
-    margin-top: 5%;
-    margin-left: 5px;
-    width: 170px;
-    height: 40px;
-}
-
 .header-navbar {
     background-color: $gray;
     height: 60px;
 }
-
-.header-line {
-    background-color: $green;
-    margin-top: 3px;
-}
-
-.login-title {
-    margin-top: 25%;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    text-align: center;
-    color: $gray;
-    display: block;
-}
-
-.footer-page {
+.user-logged-header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 25px;
-    align-content: bottom;
+    padding: 0 40px;
     position:absolute;
-    bottom: 0;
-    width: 100%; 
+    width: 98%; 
+    font-size: 20px;
+    color: white;
+    font-style: bold;    
 }
+
+.icon-user-head {
+    margin-right: 5px;
+}
+
+.icon-table {
+    padding-right: 5px;
+    align-content: center;
+    align-items: center;
+}
+
+table {
+    margin: 5px 5px 0px 5px;
+}
+

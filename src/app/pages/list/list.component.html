@@ -1,3 +1,55 @@
-<p>
-  list works!
-</p>
+<app-header></app-header>
+  <div class="card card-list">
+    <br>
+    <h1 class="title-list">Listagem de Candidatos</h1>
+    <hr class="form-line">
+    <div class="col-12">
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Nome Completo</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">Funcionalidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td><i class="fas fa-pencil-alt icon-table"></i> <i class="fas fa-trash-alt"></i></td>
+            </tr>
+            <tr>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td><i class="fas fa-pencil-alt icon-table"></i> <i class="fas fa-trash-alt"></i></td>
+            </tr>
+            <tr>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td><i class="fas fa-pencil-alt icon-table"></i> <i class="fas fa-trash-alt"></i></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+      </div>
+</div>
+<app-footer [footerStyleForm]="footerStyleForm"></app-footer>

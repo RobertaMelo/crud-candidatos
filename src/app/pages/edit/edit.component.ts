@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-edit',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
+  
+  @Input() footerStyleForm = "footer-form";
+  @Input() title = "Edição de Candidatos";
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.alterText();  
   }
-
+  
+  alterText() {
+    document.getElementById('title').innerHTML = 'Edição de Candidatos';
+  }
 }
