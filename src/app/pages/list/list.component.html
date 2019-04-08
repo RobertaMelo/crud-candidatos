@@ -14,25 +14,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td><i class="fas fa-pencil-alt icon-table"></i> <i class="fas fa-trash-alt"></i></td>
+            <tr *ngFor="let candidate of candidates">
+            <td>{{candidate.full_name}}</td>
+            <td>{{candidate.email}}</td>
+            <td >{{candidate.phone}}</td>
+            <td><i class="fas fa-pencil-alt icon-table" (click)="alter(candidate)"></i><i class="fas fa-trash-alt" (click)="delete(candidate)"></i></td>
             </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td><i class="fas fa-pencil-alt icon-table"></i> <i class="fas fa-trash-alt"></i></td>
-            </tr>
-            <tr>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-              <td><i class="fas fa-pencil-alt icon-table"></i> <i class="fas fa-trash-alt"></i></td>
-            </tr>
-            
           </tbody>
         </table>
       </div>

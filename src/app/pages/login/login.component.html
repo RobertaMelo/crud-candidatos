@@ -5,20 +5,34 @@
     <h1 class="title-login">Prova Delinea</h1>
     <img src="../../../assets/img/logo.png" alt="Delínea" class="img-thumbnail logo-login">
     <div class="card-body">
-        <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" class="form-control" formControlName="username" placeholder="Usuário" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+          </div>
         </div>
-        <input type="text" class="form-control" placeholder="Usuário" aria-label="Usuario" aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">#</span>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">#</span>
+            </div>
+            <input type="password" class="form-control" placeholder="Senha" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+          </div>
         </div>
-        <input type="text" class="form-control" placeholder="Senha" aria-label="Password" aria-describedby="basic-addon1">
-      </div>
-      <button type="submit" class="btn btn-primary button-primary-login">Entrar</button>
-      <a href="register"><button type="button" class="btn btn-secondary button-secondary-login">Cadastrar-se</button></a>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary button-primary-login">Entrar</button>
+          <a routerLink="/register"><button type="button" class="btn btn-secondary button-secondary-login">Cadastrar-se</button></a>
+        </div>
+      </form>
     </div>
   </div>
   <app-footer [footerStyleLogin]="footerStyleLogin"></app-footer>

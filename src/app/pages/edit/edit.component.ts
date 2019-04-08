@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CandidateDTO } from '../../../models/candidate.dto';
 
 @Component({
   selector: 'app-edit',
@@ -9,14 +11,16 @@ export class EditComponent implements OnInit {
   
   @Input() footerStyleForm = "footer-form";
   @Input() title = "Edição de Candidatos";
+  @Input() candidate: CandidateDTO;
 
-  constructor() {}
+  sub: any;
+  
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.alterText();  
+    this.sub = this.route.params.subscribe((candidate: CandidateDTO) => {
+      this.candidate = candidate;
+    }); 
   }
-  
-  alterText() {
-    document.getElementById('title').innerHTML = 'Edição de Candidatos';
-  }
+
 }
