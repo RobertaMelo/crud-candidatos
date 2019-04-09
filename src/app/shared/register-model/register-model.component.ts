@@ -111,19 +111,30 @@ export class RegisterModelComponent implements OnInit {
     if (this.registerForm.controls.id.value == null) {
       this.candidateService.createCandidate(this.registerForm.value)
       .subscribe(response => {
-        this.toastrService.success("Salvo com sucesso!")
-       console.log('Salvo com sucesso!');
+        this.toastrService.success("Salvo com sucesso!");
       }, error => {
         console.log(error.error);
+        let msgError = "";
+        Object.keys(error.error).map(function(key) {
+          var erro = error.error[key];
+          msgError += erro;
+        });
+        this.toastrService.warning(msgError);
       });
       return;
     } else {
       this.candidateService.updateCandidate(this.registerForm.value)
       .subscribe(response => {
       this.toastrService.success("Atualizado com sucesso!")
-       console.log('Atualizado com sucesso!');
+      this.reset()
       }, error => {
         console.log(error.error);
+        let msgError = "";
+        Object.keys(error.error).map(function(key) {
+          var erro = error.error[key];
+          msgError += erro;
+        });
+        this.toastrService.warning(msgError);
       });
     }
   }

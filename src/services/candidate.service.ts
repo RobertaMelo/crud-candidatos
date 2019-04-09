@@ -21,8 +21,8 @@ export class CandidateService {
     return this.httpClient.delete(`${this.apiURL}/candidate/${candidate.id}`);
   }
 
-  public getCandidates(url?: string){
-    return this.httpClient.get<CandidateDTO[]>(`${this.apiURL}/candidate`);
+  public getCandidates(){
+    return this.httpClient.get<CandidateDTO[]>(`${this.apiURL}/candidate/`);
   }
 
   constructor(private httpClient: HttpClient) {}

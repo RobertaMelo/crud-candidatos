@@ -2,6 +2,6 @@
   <a href="login">
     <img src="../../../assets/img/delinea-logo-branco.png" class="logo-header">
   </a>
-  <p class="user-logged-header"><i class="fas fa-user icon-user-head"></i> Usuário </p>
+  <button *ngIf="showLogout" (click)="logout()" class="icon-user-head"><i class="fas fa-sign-out-alt"> </i> Sair</button>
 </nav>
 <hr class="header-line">

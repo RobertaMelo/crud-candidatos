@@ -178,7 +178,13 @@
 }
 
 .icon-user-head {
+  text-decoration: none;
   margin-right: 5px;
+  font-size: 17px;
+  color: #FFFF;
+  margin-bottom: 80px;
+  background-color: #999898;
+  border: 0;
 }
 
 .icon-table {

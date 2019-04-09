@@ -3,6 +3,7 @@ import { Router} from '@angular/router';
 import { CandidateService } from '../../../services/candidate.service';
 import { CandidateDTO } from '../../../models/candidate.dto';
 import { first } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list',
@@ -16,7 +17,8 @@ export class ListComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private candidateService: CandidateService
+    private candidateService: CandidateService,
+    private toastrService: ToastrService
   ) { }
 
   ngOnInit() {
@@ -38,7 +40,8 @@ export class ListComponent implements OnInit {
 
   delete(candidate: CandidateDTO) {
     this.candidateService.deleteCandidate(candidate).pipe(first()).subscribe(() => {
-        this.chargeCandidates()
+      this.toastrService.success("Excluído com sucesso!")
+      this.chargeCandidates()
     });
   }
 }

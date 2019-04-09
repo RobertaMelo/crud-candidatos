@@ -162,7 +162,13 @@ $background: linear-gradient(to right top, #fafff8, #f6fef8, #f1fdf8, #edfcf9, #
 }
 
 .icon-user-head {
-    margin-right: 5px;
+  text-decoration: none;
+  margin-right: 5px;
+  font-size: 17px;
+  color: $white;
+  margin-bottom: 80px;
+  background-color: $gray;
+  border: 0;
 }
 
 .icon-table {
